@@ -1,5 +1,3 @@
-using System;
-
 namespace HowCommon.Constants;
 
 public class IdentityRoleConstant
