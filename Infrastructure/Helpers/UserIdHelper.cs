@@ -1,10 +1,10 @@
-namespace HowCommon.Infrastructure.Services;
+namespace HowCommon.Infrastructure.Helpers;
 
-public sealed class AbstractSharedUserService
+public sealed class UserIdHelper
 {
     private event EventHandler<string> OnLoggerEvent;
 
-    public AbstractSharedUserService(EventHandler<string> onLoggerEvent)
+    public UserIdHelper(EventHandler<string> onLoggerEvent)
     {
         OnLoggerEvent = onLoggerEvent;
     }
