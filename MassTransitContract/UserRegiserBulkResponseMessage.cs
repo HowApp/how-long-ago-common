@@ -1,6 +1,6 @@
 namespace HowCommon.MassTransitContract;
 
-public class UserRegiserBulkMessage
+public class UserRegiserBulkResponseMessage
 {
     public int[] UserIds { get; set; } = [];
 }

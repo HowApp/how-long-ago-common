@@ -1,5 +1,3 @@
-using System;
-
 namespace HowCommon.Configurations;
 
 public class BaseApplicationSettings

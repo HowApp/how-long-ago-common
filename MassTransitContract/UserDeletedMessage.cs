@@ -1,5 +1,3 @@
-using System;
-
 namespace HowCommon.MassTransitContract;
 
 public class UserDeletedMessage
