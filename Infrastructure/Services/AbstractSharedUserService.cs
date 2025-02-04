@@ -1,15 +1,15 @@
 namespace HowCommon.Infrastructure.Services;
 
-public abstract class AbstractSharedUserService
+public sealed class AbstractSharedUserService
 {
-    protected event EventHandler<string> OnLoggerEvent;
+    private event EventHandler<string> OnLoggerEvent;
 
-    protected AbstractSharedUserService(EventHandler<string> onLoggerEvent)
+    public AbstractSharedUserService(EventHandler<string> onLoggerEvent)
     {
         OnLoggerEvent = onLoggerEvent;
     }
 
-    protected bool ValidateUserId(int userId)
+    public bool ValidateUserId(int userId)
     {
         if (userId < 1)
         {
@@ -19,7 +19,7 @@ public abstract class AbstractSharedUserService
         return true;
     }
 
-    protected bool ValidateUserId(int[] userIds)
+    public bool ValidateUserId(int[] userIds)
     {
         if (userIds is null)
         {
