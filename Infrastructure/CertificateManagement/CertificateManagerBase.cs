@@ -8,6 +8,7 @@ using Constants;
 
 public class CertificateManagerBase
 {
+    protected static int PeriodInDays = 7;
     protected static string CertPassword = string.Empty;
     protected static string CN = string.Empty;
     protected static string CertFileName = string.Empty;
@@ -38,17 +39,13 @@ public class CertificateManagerBase
         DoNeedThrow();
     }
 
-    public interface IConfiguration
-    {
-    }
-
     protected virtual void GetOrCreateCertificate()
     {
         if (File.Exists(CertPath))
         {
             Certificate = new X509Certificate2(CertPath, CertPassword);
             
-            if (Certificate.NotAfter <= DateTime.UtcNow)
+            if (Certificate.NotAfter <= DateTime.UtcNow.AddDays(PeriodInDays)) // one week as default 
             {
                 throw new CryptographicException("Service certificate is expired");
             }
