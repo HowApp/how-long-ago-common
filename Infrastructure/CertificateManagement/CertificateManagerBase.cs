@@ -44,7 +44,7 @@ public class CertificateManagerBase
         {
             Certificate = new X509Certificate2(CertPath, CertPassword);
             
-            if (Certificate.NotAfter <= DateTime.UtcNow)
+            if (Certificate.NotAfter <= DateTime.UtcNow.AddDays(7)) // one week as default 
             {
                 throw new CryptographicException("Service certificate is expired");
             }
