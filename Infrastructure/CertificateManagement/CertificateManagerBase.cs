@@ -38,10 +38,6 @@ public class CertificateManagerBase
         DoNeedThrow();
     }
 
-    public interface IConfiguration
-    {
-    }
-
     protected virtual void GetOrCreateCertificate()
     {
         if (File.Exists(CertPath))
