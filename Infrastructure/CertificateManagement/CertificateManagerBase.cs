@@ -97,9 +97,9 @@ public class CertificateManagerBase
 
     private void DoNeedThrow()
     {
-        ArgumentException.ThrowIfNullOrEmpty(nameof(CertPassword), CertPassword);
-        ArgumentException.ThrowIfNullOrEmpty(nameof(CN), CN);
-        ArgumentException.ThrowIfNullOrEmpty(nameof(CertFileName), CertFileName);
-        ArgumentException.ThrowIfNullOrEmpty(nameof(CertPath), CertPath);
+        ArgumentException.ThrowIfNullOrEmpty(CertPassword, nameof(CertPassword));
+        ArgumentException.ThrowIfNullOrEmpty(CN, nameof(CN));
+        ArgumentException.ThrowIfNullOrEmpty(CertFileName, nameof(CertFileName));
+        ArgumentException.ThrowIfNullOrEmpty(CertPath, nameof(CertPath));
     }
 }
